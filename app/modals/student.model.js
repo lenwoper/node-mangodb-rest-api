@@ -1,3 +1,5 @@
+const bodyParser = require("body-parser");
+
 module.exports = mongoose =>{
   var schema = mongoose.Schema(
     {
@@ -14,6 +16,8 @@ module.exports = mongoose =>{
       otherData:[
         {
           schoolership:Boolean,
+          univeristy:String,
+        
 
         }
       ],

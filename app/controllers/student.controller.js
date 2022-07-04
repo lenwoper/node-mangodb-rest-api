@@ -2,8 +2,9 @@ const db = require('../modals');
 const students = db.students;
 
 exports.create = (req, res) => {
+  console.log(req.body)
   if (!req.body.name) {
-    res.status(400).send({ messege: "conett can not be empty |" })
+    res.status(400).send({ messege: "con't be empty here " })
     return;
   }
   const student = new students({
@@ -16,11 +17,7 @@ exports.create = (req, res) => {
     percentage: req.body.percentage,
     address: req.body.address,
     result: req.body.result,
-    otherData: [
-      {
-        schoolership: req.body.schoolership,
-      }
-    ],
+    otherData:req.body.otherData,
     published: req.body.published ? req.body.published : false,
 
   })
